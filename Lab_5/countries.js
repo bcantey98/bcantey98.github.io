@@ -245,3 +245,35 @@ const countries = [
   { name: "Zimbabwe", code: "ZW" },
 ];
 console.log("List of countries in the world", countries);
+
+const content = document.querySelector(".content");
+const button = document. querySelector(".new");
+
+button.addEventListener("click", country);
+
+const ordered = document.createElement("ol");
+ordered.className = "countries";
+content.appendChild(ordered);
+
+function country(){
+  ordered.innerHTML = " ";
+  shuffleArray(list);
+  const shuffledlist = list.slice(0, 25);
+
+  const filtered = list.filter(function (x){});
+  console.log(filtered);
+
+  const map1 = shuffledlist.map((country) => {
+    const li = document.createElement("li");
+    li.innerHTML = "<strong>" + country.code + "</strong>" + " ";
+    li.append(country.name);
+    ordered.appendChild(li);
+  });
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
