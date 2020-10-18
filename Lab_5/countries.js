@@ -1,5 +1,5 @@
 /* N.B. - For your lab, use the variable "countries" now available on the window space */
-const countries = [
+const countriesList = [
   { name: "Afghanistan", code: "AF" },
   { name: "Åland Islands", code: "AX" },
   { name: "Albania", code: "AL" },
@@ -246,16 +246,16 @@ const countries = [
 ];
 
 
-const myContent = document.querySelector(".content");
-const myButton = document.querySelector(".newButton");
+const listContent = document.querySelector(".content");
+const button = document.querySelector(".newButton");
 
-myButton.addEventListener("click", showCountries);
+button.addEventListener("click", showList);
 
 const ordered = document.createElement("ol");
 ordered.className = "countries";
-myContent.appendChild(ordered);
-// this function picks the first 25 random countries to display after calling shuffleCountries to randomize the list.
-function showCountries() {
+listContent.appendChild(ordered);
+
+function showList() {
   ordered.innerHTML = " ";
   shuffleCountries(countriesList);
   const shuffledCountriesList = countriesList.slice(0, 25);
@@ -267,19 +267,22 @@ function showCountries() {
   
   console.log(filtered);
 
-// creating the list that will hold the countries and country codes 
-  const m1 = shuffledCountriesList.map((country) => {
+ 
+  const a = shuffledCountriesList.map((country) => {
     const li = document.createElement("li");
-    li.innerHTML = "<strong>" + country.code + "</strong>" + "-";     // Display the country code for each in a bold font weight
-    li.append(country.name); // Display the name of each country in a normal font weight
+    li.innerHTML = "<strong>" + country.code + "</strong>" + "-";   
+    li.append(country.name);
     ordered.appendChild(li);
   });
 }
 
-// this function makes sure that the array is in random order always using math.random
+
 function shuffleCountries(array) {
   for (let x = array.length - 1; x > 0; x--) {
     const y = Math.floor(Math.random() * (x + 1));
     [array[x], array[y]] = [array[y], array[x]];
   }
 }
+
+
+
