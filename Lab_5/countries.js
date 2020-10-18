@@ -244,13 +244,10 @@ const countriesList = [
   { name: "Zambia", code: "ZM" },
   { name: "Zimbabwe", code: "ZW" },
 ];
-
-
 const listContent = document.querySelector(".content");
 const button = document.querySelector(".newButton");
 
 button.addEventListener("click", showList);
-
 const ordered = document.createElement("ol");
 ordered.className = "countries";
 listContent.appendChild(ordered);
@@ -283,6 +280,3 @@ function shuffleCountries(array) {
     [array[x], array[y]] = [array[y], array[x]];
   }
 }
-
-
-
