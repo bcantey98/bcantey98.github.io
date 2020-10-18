@@ -244,36 +244,42 @@ const countries = [
   { name: "Zambia", code: "ZM" },
   { name: "Zimbabwe", code: "ZW" },
 ];
-console.log("List of countries in the world", countries);
 
-const content = document.querySelector(".content");
-const button = document. querySelector(".new");
 
-button.addEventListener("click", country);
+const myContent = document.querySelector(".content");
+const myButton = document.querySelector(".newButton");
+
+myButton.addEventListener("click", showCountries);
 
 const ordered = document.createElement("ol");
 ordered.className = "countries";
-content.appendChild(ordered);
-
-function country(){
+myContent.appendChild(ordered);
+// this function picks the first 25 random countries to display after calling shuffleCountries to randomize the list.
+function showCountries() {
   ordered.innerHTML = " ";
-  shuffleArray(list);
-  const shuffledlist = list.slice(0, 25);
+  shuffleCountries(countriesList);
+  const shuffledCountriesList = countriesList.slice(0, 25);
+  
+  const filtered = countriesList.filter(function (x){
+    return shuffledCountriesList.indexOf(x) < 0;
+  });
 
-  const filtered = list.filter(function (x){});
+  
   console.log(filtered);
 
-  const map1 = shuffledlist.map((country) => {
+// creating the list that will hold the countries and country codes 
+  const m1 = shuffledCountriesList.map((country) => {
     const li = document.createElement("li");
-    li.innerHTML = "<strong>" + country.code + "</strong>" + " ";
-    li.append(country.name);
+    li.innerHTML = "<strong>" + country.code + "</strong>" + "-";     // Display the country code for each in a bold font weight
+    li.append(country.name); // Display the name of each country in a normal font weight
     ordered.appendChild(li);
   });
 }
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--){
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+// this function makes sure that the array is in random order always using math.random
+function shuffleCountries(array) {
+  for (let x = array.length - 1; x > 0; x--) {
+    const y = Math.floor(Math.random() * (x + 1));
+    [array[x], array[y]] = [array[y], array[x]];
   }
 }
