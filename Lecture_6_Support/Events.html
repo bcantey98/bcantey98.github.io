@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 6 Support</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/events.js"></script>
+</head>
+
+<body>
+    
+    <div class="flexbox-container">
+
+        <div class="flexbox-item">
+            <button onclick="this.innerHTML = Date()"  class="flexbox-button">The time is?</button>
+        </div>
+
+        <div class="flexbox-item">
+            <button onclick="document.getElementById('demo').innerHTML = Date()"  class="flexbox-button">The time is?</button>
+        </div>
+
+        <div class="flexbox-item">
+            <p id="demo" onmouseover="alert('Mouse Over!') ">Change this text</p>
+        </div>
+
+        <div class="flexbox-item">
+            <button onclick="displayDate()" class="flexbox-button">The time is?</button>
+        </div>
+
+        <div class="flexbox-item">
+            <p id="demo2">Change this text</p>
+        </div>
+
+        <div class="flexbox-item">
+            <button onclick="addPTag()" class="flexbox-button">Add P Element</button>
+        </div>
+
+        <div class="flexbox-item">
+            <button onclick="removeLastPElement()" class="flexbox-button">Remove P Element</button>
+        </div>
+
+        <div class="flexbox-item">
+            <button class="flexbox-button" id="myTestButton">AddEventListener</button>
+        </div>
+
+        <div class="flexbox-item">
+            <button onclick="randomColorChange()" class="flexbox-button">Random Color</button>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
