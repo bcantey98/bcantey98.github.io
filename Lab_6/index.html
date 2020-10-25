@@ -6,17 +6,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/form_styles.css">
 </head>
+
 <body>
-    <form action= "https://fierce-taiga-97625.herokuapp.com/lab" method="POST">
-        <div>
-            <label>Name</label>
-            <input>
-        </div>
-        <div>
-            <label>Intrest</label>
-            <input>
-        </div>
-        <button>Submit</button>
+    <form action ="https://fierce-taiga-97625.herokuapp.com/lab" method="post">
+        <h1>HTML Forms Lab</h1>
+        <ul>
+            <li>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" maxlength="140" placeholder="name here">
+            </li>
+            <li>
+                <label for="interests">Interests</label>
+                <textarea id="interests" name="interests" rows="5" cols="33" placeholder=" text here"></textarea>
+            </li>
+            <li class="button">
+                <button type="submit">Submit</button>
+            </li>
+        </ul>
+
+
+
     </form>
     
 </body>
