@@ -4,12 +4,11 @@ function getBusRoute() {
   let busRoute = document.getElementById("busroute").value; // Your code here
 
   if ((typeof busRoute !== "undefined") & (busRoute !== "")) {
-    let busRouteURL = "https://api.umd.io/v0/bus/routes/" + busRoute; // Your code here
+    let busRouteLink = "https://api.umd.io/v0/bus/routes/" + busRoute; // Your code here
 
-    fetch(busRouteURL)
-      .then((response) => {
-        return response.json();
-      })
+    fetch(busRouteLink)
+      .then((results) => {return results.json();})
+
       .then((route) => {
           let title = route.title;
           let latMax = route.lat_max;
@@ -23,7 +22,7 @@ function getBusRoute() {
           sessionStorage.setItem("lat_min", latMin);
           sessionStorage.setItem("lon_max", lonMax);
           sessionStorage.setItem("lon_min", lonMin);
-        // YOUR CODE HERE
+
       })
       .catch((err) => {
         console.log(err);
