@@ -1,7 +1,7 @@
 const main = document.getElementById("main");
 
 function getBusRoute() {
-  let busRoute = document.getElementById("Bus Route").value; // Your code here
+  let busRoute = document.getElementById("BusRoute").value; // Your code here
 
   if ((typeof busRoute !== "undefined") & (busRoute !== "")) {
     let busRouteLink = "https://api.umd.io/v0/bus/routes/" + busRoute; // Your code here
