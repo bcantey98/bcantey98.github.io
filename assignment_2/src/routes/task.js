@@ -132,14 +132,11 @@ router.delete('/task', (req, res) => {
     });
 })
 
-
-module.exports = router
-
 //GET all tasks
 router.get('/allTasks', (req, res) => {
 
     console.log("Get all tasks");
-    let sql = "select * from task";
+    let sql = "select * from tasks";
     db.all(sql, (err, row) => {
       if (err) {
         res.status(400).json({ "error": err.message });
@@ -151,3 +148,6 @@ router.get('/allTasks', (req, res) => {
       })
     });
   })
+
+module.exports = router
+

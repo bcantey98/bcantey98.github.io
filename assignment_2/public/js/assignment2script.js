@@ -394,10 +394,6 @@ window.onload = async function loadPage() {
 }
 
 
-
-
-
-
 /*
    ------------   Search Task ------------
 */
